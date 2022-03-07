@@ -1,5 +1,7 @@
 class Solution:
     def convertToBase7(self, num: int) -> str:
+        if num == 0:
+            return '0'
         res = ''
         flag = True
         if num < 0:
