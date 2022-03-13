@@ -9,6 +9,7 @@ class Solution:
         def backtrack(start: int, n: int, k: int):
             if (len(self.curRes) == k):
                 self.res.append(self.curRes.copy())
+                return
             for i in range(start, n + 1):
                 self.curRes.append(i)
                 backtrack(i + 1, n, k)
