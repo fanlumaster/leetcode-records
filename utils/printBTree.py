@@ -75,14 +75,16 @@ class TreeNode:
         return lines, n + m + u, max(p, q) + 2, n + u // 2
 
 
-# b = TreeNode(50)
-# for _ in range(50):
-#     b.insert(random.randint(0, 100))
-# b.display()
+if __name__ == "__main__":
 
-root = TreeNode(1)
-root.left = TreeNode(2)
-root.right = TreeNode(3)
-root.right.left = TreeNode(4)
-root.right.right = TreeNode(5)
-root.display()
+    b = TreeNode(50)
+    for _ in range(50):
+        b.insert(random.randint(0, 100))
+    b.display()
+
+    # root = TreeNode(1)
+    # root.left = TreeNode(2)
+    # root.right = TreeNode(3)
+    # root.right.left = TreeNode(4)
+    # root.right.right = TreeNode(5)
+    # root.display()
