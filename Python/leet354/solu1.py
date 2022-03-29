@@ -1,5 +1,4 @@
 from typing import List
-from functools import cmp_to_key
 
 
 class Solution:
@@ -7,29 +6,28 @@ class Solution:
         if len(envelopes) == 1:
             return 1
 
-        def cmp(x: List[int], y: List[int]):
-            if x[0] < y[0]:
-                return -1
-            if x[0] > y[0]:
-                return 1
-            if x[0] == y[0]:
-                if x[1] > y[1]:
-                    return -1
-                else:
-                    return 1
-        envelopes.sort(key=cmp_to_key(cmp))
+        envelopes.sort(key=lambda x: (x[0], -x[1]))
         data = [item[1] for item in envelopes]
-        dp = [0] * len(data)
-        dp[0] = 1
-        for i in range(1, len(data)):
-            temp = 0
-            for j in range(i):
-                if data[j] < data[i]:
-                    temp = max(temp, dp[j])
-            temp += 1
-            dp[i] = temp
-        res = max(dp)
-        return res
+        top = [0] * len(data)
+        piles = 0
+        for i in range(len(data)):
+            cur = data[i]
+            left = 0
+            right = piles
+            # 二分查找最左边的大于 cur 的元素的位置
+            while left < right:
+                mid = left + (right - left) // 2
+                if top[mid] > cur:
+                    right = mid
+                elif top[mid] < cur:
+                    left = mid + 1
+                elif top[mid] == cur:
+                    right = mid
+            top[left] = cur
+            if left == piles:
+                piles += 1
+
+        return piles
 
 
 solu = Solution()
