@@ -4,6 +4,8 @@ from typing import List
 class NumMatrix:
 
     def __init__(self, matrix: List[List[int]]):
+        self.preSum = [[0] * (len(matrix[0]) + 1)
+                       for _ in range(len(matrix) + 1)]
         pass
 
     def sumRegion(self, row1: int, col1: int, row2: int, col2: int) -> int:
