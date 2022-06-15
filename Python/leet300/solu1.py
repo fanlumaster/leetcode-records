@@ -24,6 +24,6 @@ class Solution:
 solu = Solution()
 data = [10, 9, 2, 5, 3, 7, 101, 18]
 data = [0, 1, 0, 3, 2, 3]
-data = [7, 7, 7, 7, 7, 7, 7]
+# data = [7, 7, 7, 7, 7, 7, 7]
 res = solu.lengthOfLIS(data)
 print(res)
