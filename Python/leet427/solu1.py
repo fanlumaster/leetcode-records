@@ -81,12 +81,14 @@ class Solution:
         bottomRight = self.constructHelp(
             gridPrefixSum, grid, (coord1[0] + halfWidth, coord1[1] + halfWidth), coord2)
 
-        res = Node(0, 0, topLeft, topRight, bottomLeft, bottomRight)
+        res = Node(1, 0, topLeft, topRight, bottomLeft, bottomRight)
         return res
 
 
 solu = Solution()
 grid = [[0, 1], [1, 0]]
+grid = [[1, 1, 1, 1, 0, 0, 0, 0], [1, 1, 1, 1, 0, 0, 0, 0], [1, 1, 1, 1, 1, 1, 1, 1], [1, 1, 1, 1, 1, 1, 1, 1], [
+    1, 1, 1, 1, 0, 0, 0, 0], [1, 1, 1, 1, 0, 0, 0, 0], [1, 1, 1, 1, 0, 0, 0, 0], [1, 1, 1, 1, 0, 0, 0, 0]]
 res = solu.construct(grid)
 print(res.isLeaf, res.val)
 print(res.topLeft.isLeaf, res.topLeft.val)
