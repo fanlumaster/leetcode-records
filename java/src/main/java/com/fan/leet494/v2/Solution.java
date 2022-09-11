@@ -1,7 +1,5 @@
 package com.fan.leet494.v2;
 
-import java.util.Arrays;
-
 /**
  * dp
  */
@@ -35,7 +33,7 @@ public class Solution {
 
     public static void main(String[] args) {
         var solu = new Solution();
-        int[] nums = new int[]{1, 1, 1, 1, 1};
+        int[] nums = new int[] { 1, 1, 1, 1, 1 };
         int target = 3;
         var res = solu.findTargetSumWays(nums, target);
         System.out.println(res);
