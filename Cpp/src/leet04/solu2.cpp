@@ -1,3 +1,5 @@
+// to make the time complexity equals to O(log(m+m))
+// we need to dichotomy
 #include <iostream>
 #include <vector>
 
