@@ -1,4 +1,4 @@
-package com.fan.leet226;
+package com.fan.leet226.v1;
 
 import java.util.Arrays;
 
