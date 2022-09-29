@@ -1,9 +1,10 @@
 package com.fan.leet06;
 
-import java.util.Arrays;
-
 public class Solution {
     public String convert(String s, int numRows) {
+        if (s.length() == 1 || numRows == 1) {
+            return s;
+        }
         int T = numRows + (numRows - 2);
         int TNums = s.length() / T + 1;
         char[][] trans = new char[numRows][TNums * (numRows - 2 + 1)];
