@@ -11,8 +11,8 @@ class ListNode:
 def printList(head: ListNode):
     # 打印链表
     pointer = head
-    while(pointer):
-        print(pointer.val, end=' ')
+    while pointer:
+        print(pointer.val, end=" ")
         pointer = pointer.next
     print()
 
@@ -40,7 +40,7 @@ class Solution:
 
         def reverseN(head: ListNode, N: int):
             # 反转前 N 个节点
-            if (N == 1):
+            if N == 1:
                 self.successor = head.next
                 return head
 

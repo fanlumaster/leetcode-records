@@ -1,4 +1,4 @@
-package com.fan.leet20;
+package com.fan.leet20.firsttime;
 
 import java.util.Stack;
 

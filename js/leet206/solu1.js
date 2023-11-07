@@ -40,3 +40,5 @@ head.next.next.next.next = new ListNode(5)
 printList(head)
 let newHead = reverseList(head)
 printList(newHead)
+
+
