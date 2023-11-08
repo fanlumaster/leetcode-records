@@ -1,7 +1,3 @@
-from doctest import REPORTING_FLAGS
-from operator import le
-
-
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         # 开始的边界条件判断
