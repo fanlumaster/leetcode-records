@@ -68,8 +68,8 @@ public class Solution {
     int[] pairs = solu.successfulPairs(spells, portions, success);
     System.out.println(Arrays.toString(pairs));
 
-    spells = new int[] {3,1,2};
-    portions = new int[] {8,5,8};
+    spells = new int[] { 3, 1, 2 };
+    portions = new int[] { 8, 5, 8 };
     success = 16;
     pairs = solu.successfulPairs(spells, portions, success);
     System.out.println(Arrays.toString(pairs));
