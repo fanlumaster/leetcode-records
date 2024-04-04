@@ -11,4 +11,4 @@ include_directories("./src/utils/includes/")
 add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
-add_executable(leetsolu "./src/utils/includes/datastructures.h" "./src/utils/datastructures.cpp")
+add_executable(leetsolu "./src/leet101/solu1.cpp" "./src/utils/datastructures.cpp")
