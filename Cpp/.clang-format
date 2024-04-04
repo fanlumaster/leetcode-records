@@ -1,6 +1,7 @@
 ---
-BasedOnStyle: Microsoft
+BasedOnStyle: llvm
 IndentWidth: 4
 
 # 不要给头文件排序
 SortIncludes: false
+ColumnLimit: 260
