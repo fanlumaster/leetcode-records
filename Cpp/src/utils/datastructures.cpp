@@ -32,9 +32,9 @@ TreeNode *fany::buildTreeFromLevelOrder(std::vector<std::variant<int, std::strin
 
 std::pair<std::vector<std::string>, std::vector<int>> display_aux(TreeNode *node) {
     std::pair<std::vector<std::string>, std::vector<int>> res;
-    auto string_multiply = [](const std::string &str, int n) {
+    auto string_multiply = [](const std::string &str, auto n) {
         std::string result;
-        for (int i = 0; i < n; ++i) {
+        for (auto i = 0; i < n; ++i) {
             result += str;
         }
         return result;
@@ -42,7 +42,7 @@ std::pair<std::vector<std::string>, std::vector<int>> display_aux(TreeNode *node
     if (!node->left && !node->right) {
         std::vector<std::string> curLines;
         std::string line = std::to_string(node->val);
-        int width = line.size();
+        int width = int(line.size());
         int height = 1;
         int middle = width / 2;
         curLines.push_back(line);
@@ -69,9 +69,9 @@ std::pair<std::vector<std::string>, std::vector<int>> display_aux(TreeNode *node
             curLines.push_back(line + string_multiply(" ", u));
         }
         res.first = curLines;
-        int width = n + u;
+        int width = int(n + u);
         int height = p + 2;
-        int middle = n + u / 2;
+        int middle = int(n + u / 2);
         std::vector<int> fmtData{width, height, middle};
         res.second = fmtData;
         return res;
@@ -94,9 +94,9 @@ std::pair<std::vector<std::string>, std::vector<int>> display_aux(TreeNode *node
             curLines.push_back(line + string_multiply(" ", u));
         }
         res.first = curLines;
-        int width = n + u;
+        int width = int(n + u);
         int height = p + 2;
-        int middle = u / 2;
+        int middle = int(u / 2);
         std::vector<int> fmtData{width, height, middle};
         res.second = fmtData;
         return res;
@@ -131,9 +131,9 @@ std::pair<std::vector<std::string>, std::vector<int>> display_aux(TreeNode *node
             curLines.push_back(leftLines[i] + string_multiply(" ", u) + rightLines[i]);
         }
         res.first = curLines;
-        int width = n + m + u;
+        int width = int(n + m + u);
         int height = std::max(p, q) + 2;
-        int middle = n + u / 2;
+        int middle = int(n + u / 2);
         std::vector<int> fmtData{width, height, middle};
         res.second = fmtData;
         return res;
