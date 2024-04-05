@@ -1,11 +1,1 @@
-这是我的个人 leetcode 刷题仓库。使用的语言是 Python。
-
-现在，使用的语言多了起来。找工作主要是使用 Java。而且，用 VSCode + vscodevim 写 Java 也很方便。也不比 Python 麻烦到哪里去。
-
-然后就是还有其他的凭兴趣使用的一些语言。
-
-感觉现在写 LeetCode 有点像玩小游戏一样。思考，闯关，通关，获取通关的愉悦感，然后再如此往复。
-
-测试一下是否能够通过 ssh 正常提交到仓库。
-
-做题就做题，不整其他的东西在里面。解耦，解耦。
+My personal leetcode gaming repo.
