@@ -35,5 +35,7 @@ int main(int argc, char *argv[]) {
     TreeNode *root = fany::buildTreeFromLevelOrder(data);
     auto res = solu.isSymmetric(root);
     std::cout << "res: " << res << "\n";
+    // 回收内存
+    fany::makeEmpty(root);
     return 0;
 }

@@ -147,11 +147,21 @@ void fany::displayTree(TreeNode *node) {
     }
 }
 
+void fany::makeEmpty(TreeNode *&t) {
+    if (t != nullptr) {
+        makeEmpty(t->left);
+        makeEmpty(t->right);
+        delete t;
+    }
+    t = nullptr;
+}
+
 /*
 int main(int argc, char *argv[]) {
     std::vector<std::variant<int, std::string>> data = {4, -7, -3, "null", "null", -9, -3, 9, -7, -4, "null", 6, "null", -6, -6, "null", "null", 0, 6, 5, "null", 9, "null", "null", -1, -4, "null", "null", "null", -2};
     TreeNode *root = fany::buildTreeFromLevelOrder(data);
     fany::displayTree(root);
+    fany::makeEmpty(root);
     return 0;
 }
 */
