@@ -1,8 +1,9 @@
-import random
-from typing import List, Optional, Tuple
+from typing import Optional, List, Tuple
+from queue import Queue
 
 
 class TreeNode:
+    # Definition for a binary tree node.
     def __init__(self, val) -> None:
         self.val = val
         self.right: Optional[TreeNode] = None
@@ -78,16 +79,54 @@ class TreeNode:
         return [], 0, 0, 0  # dummy returns
 
 
+def buildTreeFromLevelOrder(data: List[int]):
+    if len(data) == 0:
+        return None
+    count = 0
+    q = Queue()
+    root = TreeNode(data[0])
+    q.put(root)
+    curNode = TreeNode(0)  # dummy value
+
+    for i in range(1, len(data)):
+        node = TreeNode(data[i]) if data[i] != None else None
+        if count == 0:
+            curNode = q.get()
+            count += 1
+            curNode.left = node
+        else:
+            count = 0
+            curNode.right = node
+        if data[i] != None:
+            q.put(node)
+
+    return root
+
+
+class Solution:
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        if root is None:
+            return []
+        q = Queue()
+        q.put(root)
+        res: List[List[int]] = []
+        while not q.empty():
+            curLevel = []
+            curLevelNodeCnt = q.qsize()
+            for _ in range(curLevelNodeCnt):
+                curNode: TreeNode = q.get()
+                curLevel.append(curNode.val)
+                if curNode.left:
+                    q.put(curNode.left)
+                if curNode.right:
+                    q.put(curNode.right)
+            res.append(curLevel)
+        return res
+
+
 if __name__ == "__main__":
-
-    b = TreeNode(50)
-    for _ in range(50):
-        b.insert(random.randint(0, 100))
-    b.display()
-
-    # root = TreeNode(1)
-    # root.left = TreeNode(2)
-    # root.right = TreeNode(3)
-    # root.right.left = TreeNode(4)
-    # root.right.right = TreeNode(5)
-    # root.display()
+    solu = Solution()
+    data = [3, 9, 20, None, None, 15, 7]
+    root = buildTreeFromLevelOrder(data)
+    res = solu.levelOrder(root)
+    print(res)
