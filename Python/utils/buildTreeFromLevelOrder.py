@@ -78,7 +78,7 @@ class TreeNode:
         return [], 0, 0, 0  # dummy returns
 
 
-def buildTree(data: List[int]) -> Optional[TreeNode]:
+def buildTreeFromLevelOrder(data: List[int]) -> Optional[TreeNode]:
     if len(data) == 0:
         return None
     count = 0
@@ -102,8 +102,9 @@ def buildTree(data: List[int]) -> Optional[TreeNode]:
     return root
 
 
-data = [4, -7, -3, None, None, -9, -3, 9, -7, -4, None, 6, None, -6, -6,
-        None, None, 0, 6, 5, None, 9, None, None, -1, -4, None, None, None, -2]
-root = buildTree(data)
-if root:
-    root.display()
+if __name__ == "__main__":
+    data = [4, -7, -3, None, None, -9, -3, 9, -7, -4, None, 6, None, -6, -6,
+            None, None, 0, 6, 5, None, 9, None, None, -1, -4, None, None, None, -2]
+    root = buildTreeFromLevelOrder(data)
+    if root:
+        root.display()
