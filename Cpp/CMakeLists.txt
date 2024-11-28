@@ -9,8 +9,4 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 include_directories("./src/utils/includes/")
 
-add_executable(
-  leetsolu 
-  "./src/utils/datastructures.cpp"
-  "./src/leet101/solu1.cpp" 
-)
+add_executable(leetsolu "src/leet02/solu1.cpp")
