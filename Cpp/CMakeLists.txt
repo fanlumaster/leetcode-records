@@ -1,14 +1,16 @@
-cmake_minimum_required(VERSION 3.0.0)
-project(leetsolu VERSION 1.0)
+cmake_minimum_required(VERSION 3.27.0)
+project(leetsolu VERSION 1.0 LANGUAGES CXX)
 
 # specify the C++ standard
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+# set output executable file directory
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
-include_directories("./src/utils")
 include_directories("./src/utils/includes/")
 
-add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
-add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
-
-add_executable(leetsolu "./src/leet101/solu1.cpp" "./src/utils/datastructures.cpp")
+add_executable(
+  leetsolu 
+  "./src/utils/datastructures.cpp"
+  "./src/leet101/solu1.cpp" 
+)

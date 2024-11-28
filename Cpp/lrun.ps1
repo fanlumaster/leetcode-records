@@ -1,18 +1,18 @@
-# run exe file that has already been compiled before
-$content = Get-Content -Path "./CMakeLists.txt"
-foreach($line in $content)
-{
-  if ($line.StartsWith("add_executable"))
-  {
-    $pattern = "\((.*?)\)"
-    if ($line -match $pattern)
-    {
-      $contentInParentheses = $Matches[1]
-      $result = -split $contentInParentheses
-      $exePath = "./build/DEBUG/" + $result[0] + ".exe"
-      Write-Host "start running as follows..."
-      Write-Host "=================================================="
-      Invoke-Expression $exePath
-    }
-  }
-}
+content=$(<"./CMakeLists.txt")
+exePath=""
+while IFS= read -r line; do
+  if [[ $line == "add_executable"* ]]; then
+    pattern="\((.*?)\)"
+    if [[ $line =~ $pattern ]]; then
+      contentInParentheses="${BASH_REMATCH[1]}"
+      result=($contentInParentheses)
+      exePath="./build/bin/${result[0]}"
+    fi
+  fi
+done <<<"$content"
+
+if [ -n "$exePath" ]; then
+  $exePath
+else
+  echo "cannot find executable file path"
+fi

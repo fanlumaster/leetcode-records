@@ -16,24 +16,30 @@ if [ ! -d "$buildFolderPath" ]; then
   echo "build folder created."
 fi
 
-cmake -G "Unix Makefiles" -DCMAKE_SYSTEM_PROCESSOR=x86_64 -S . -B ./build/
+cmake -G "Unix Makefiles" -D CMAKE_CXX_COMPILER=/usr/bin/g++ -S . -B ./build/
 
 if [ $? -eq 0 ]; then
   cmake --build ./build/ --config DEBUG
   if [ $? -eq 0 ]; then
-    content=$(< "./CMakeLists.txt")
+    content=$(<"./CMakeLists.txt")
+    exePath=""
     while IFS= read -r line; do
       if [[ $line == "add_executable"* ]]; then
         pattern="\((.*?)\)"
         if [[ $line =~ $pattern ]]; then
           contentInParentheses="${BASH_REMATCH[1]}"
           result=($contentInParentheses)
-          exePath="./build/${result[0]}"
+          exePath="./build/bin/${result[0]}"
           echo "start running as follows..."
           echo "=================================================="
-          "$exePath"
         fi
       fi
-    done <<< "$content"
+    done <<<"$content"
+    # execute the binary file
+    if [ -n "$exePath" ]; then
+      $exePath
+    else
+      echo "cannot find executable file path"
+    fi
   fi
 fi
