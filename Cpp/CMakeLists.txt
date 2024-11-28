@@ -9,4 +9,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 
 include_directories("./src/utils/includes/")
 
-add_executable(leetsolu "src/leet02/solu1.cpp")
+set(MY_EXECUTABLE_NAME "leetsolu")
+
+add_executable(
+  ${MY_EXECUTABLE_NAME}
+  "src/leet02/solu1.cpp"
+)
