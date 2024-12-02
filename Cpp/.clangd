@@ -1,7 +1,9 @@
+# Notice: .clangd -I or --include-directory do not support relative path: https://github.com/clangd/clangd/issues/1038
 CompileFlags:
   Add: [
     "-std=c++17",
-    "-I/home/fanyfull/EDisk/AlgoCodes/leetcode-records/Cpp/utils/includes",
+    "--include-directory=/home/sonnycalcr/EDisk/AlgoCodes/leetcode-records/Cpp/src/utils/includes",
+    # "-I/home/sonnycalcr/EDisk/AlgoCodes/leetcode-records/Cpp/src/utils/includes",
     # -Wno-unused-value,
   ] # ignore some specific warnings
   CompilationDatabase: build/       # Search build/ directory for compile_commands.json
