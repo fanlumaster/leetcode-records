@@ -13,5 +13,5 @@ set(MY_EXECUTABLE_NAME "leetsolu")
 
 add_executable(
   ${MY_EXECUTABLE_NAME}
-  "./src/leet04/solu2_1.cpp"
+  "./src/leet05/solu1.cpp"
 )
