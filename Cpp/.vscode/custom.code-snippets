@@ -1,0 +1,24 @@
+{
+  "Main Function": {
+    "scope": "cpp",
+    "prefix": "main",
+    "body": [
+      "int main(int argc, char *argv[]) {",
+      "  $0",
+      "  return 0;",
+      "}"
+    ],
+    "description": "Insert a C++ main function"
+  },
+  "LeetCode Common Headers": {
+    "scope": "cpp",
+    "prefix": "leet",
+    "body": [
+      "#include <iostream>",
+      "",
+      "using namespace std;",
+      "$0"
+    ],
+    "description": "Simple leetCode common template"
+  }
+}
