@@ -16,8 +16,7 @@
     "body": [
       "#include <iostream>",
       "",
-      "using namespace std;",
-      "$0"
+      "using namespace std;$0",
     ],
     "description": "Simple leetCode common template"
   }
