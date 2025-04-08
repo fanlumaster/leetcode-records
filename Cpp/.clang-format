@@ -2,6 +2,6 @@
 BasedOnStyle: llvm
 IndentWidth: 2
 
-# do not sort header files
-SortIncludes: false
-ColumnLimit: 300
+# Sort header files
+SortIncludes: true
+ColumnLimit: 80

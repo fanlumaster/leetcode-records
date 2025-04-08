@@ -1,11 +1,12 @@
 # Notice: .clangd -I or --include-directory do not support relative path: https://github.com/clangd/clangd/issues/1038
 CompileFlags:
   Add: [
-    "-std=c++17",
-    "--include-directory=/home/sonnycalcr/EDisk/AlgoCodes/leetcode-records/Cpp/src/utils/includes",
-    # "-I/home/sonnycalcr/EDisk/AlgoCodes/leetcode-records/Cpp/src/utils/includes",
-    # -Wno-unused-value,
-  ] # ignore some specific warnings
-  CompilationDatabase: build/       # Search build/ directory for compile_commands.json
+      "-std=c++17",
+      "-I/home/sonnycalcr/EDisk/AlgoCodes/leetcode-records/Cpp/src/utils/includes", # For Linux
+      "-I/Users/sonnycalcr/EDisk/AlgoCodes/leetcode-records/Cpp/src/utils/includes", # For MacOS
+      # "-I/home/sonnycalcr/EDisk/AlgoCodes/leetcode-records/Cpp/src/utils/includes",
+      # -Wno-unused-value,
+    ] # ignore some specific warnings
+  CompilationDatabase: build/ # Search build/ directory for compile_commands.json
 # Diagnostics:
 #   UnusedIncludes: None # ignore unused includes
